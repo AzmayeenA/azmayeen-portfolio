@@ -1,0 +1,528 @@
+/* Google Font CDN Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --bg-color: black;
+  --text-color: white;
+}
+
+body {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+}
+
+body.light-mode {
+  --bg-color: white;
+  --text-color: black;
+}
+
+/* Custom Scroll Bar CSS */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #b74b4b;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b74b4b;
+}
+
+/* Theme Toggle */
+.toggle-theme {
+  cursor: pointer;
+  color: #b74b4b;
+  font-size: 1.5rem;
+  margin-left: 20px;
+  transition: 0.3s ease;
+}
+
+/* Shared text color */
+.logo,
+.nav-container .links a,
+.dropdown .links a,
+.main-container .content,
+section .title span,
+section .topic,
+.about-details .right p,
+.skills-details p,
+.skills-details .experience .num,
+.skills-details .experience .exp,
+.services .boxes .box,
+.contact .text,
+footer .text span,
+footer .text span a {
+  color: var(--text-color);
+}
+
+/* Navbar styling */
+nav, .nav-container {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.logo span {
+  color: #b74b4b;
+  text-shadow: 0 0 10px #b74b4b;
+}
+
+.hamburg,
+.cancel {
+  cursor: pointer;
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  color: white;
+  opacity: 0;
+  pointer-events: none;
+  font-size: clamp(2.5rem, 0.5rem + 5vw, 3rem);
+}
+
+.nav-container .links {
+  display: flex;
+}
+
+.nav-container .links a {
+  position: relative;
+  font-size: 1.2rem;
+  margin: 0 20px;
+  font-weight: 550;
+  transition: 0.3s linear;
+}
+
+.nav-container .links a::before {
+  position: absolute;
+  content: "";
+  bottom: -3px;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background-color: #b74b4b;
+  transition: 0.2s linear;
+}
+
+.nav-container .links a:hover::before {
+  width: 100%;
+}
+
+.nav-container .links a:hover {
+  color: #b74b4b;
+}
+
+.dropdown {
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  transform: translateY(-500px);
+  width: 100%;
+  height: auto;
+  backdrop-filter: blur(4px) brightness(40%);
+  box-shadow: 0 0 20px black;
+  transition: 0.2s linear;
+}
+
+.dropdown .links a {
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+  align-items: center;
+  transition: 0.2s linear;
+}
+
+.dropdown .links a:hover {
+  background-color: #b74b4b;
+  color: var(--bg-color);
+}
+
+/* Main content sections */
+section {
+  width: 100%;
+  min-height: 90vh;
+}
+
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 100px;
+  align-items: center;
+}
+
+.main-container .image {
+  width: 500px;
+  height: 45vh;
+  border-radius: 100%;
+  overflow: hidden;
+  box-shadow: 0 0 50px #b74b4b;
+  margin-top: 50px;
+}
+
+.main-container .image img {
+  width: 100%;
+}
+
+.main-container .image:hover {
+  animation: animate 1.5s ease-in-out infinite;
+}
+
+@keyframes animate {
+  0% { scale: 1; }
+  50% { scale: 1.05; }
+  100% { scale: 1; }
+}
+
+.main-container .content {
+  width: 40%;
+}
+
+.content h1 {
+  font-size: clamp(1rem, 1rem + 5vw, 1.8rem);
+}
+
+.content h1 span {
+  color: #b74b4b;
+  text-shadow: 0 0 10px #b74b4b;
+}
+
+.content .typewriter {
+  font-size: clamp(1rem, 1rem + 5vw, 2.5rem);
+  font-weight: 600;
+}
+
+.content .typewriter-text {
+  color: #b74b4b;
+  text-shadow: 0 0 10px #b74b4b;
+}
+
+.content p {
+  font-size: clamp(0.4rem, 0.2rem + 9vw, 1rem);
+  margin: 10px 0;
+}
+
+.social-links i {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height: 3rem;
+  background-color: transparent;
+  border: 0.2rem solid #b74b4b;
+  border-radius: 50%;
+  color: #b74b4b;
+  margin: 5px 15px;
+  font-size: 1.5rem;
+  transition: 0.2s linear;
+}
+
+.social-links i:hover {
+  scale: 1.3;
+  background-color: #b74b4b;
+  color: var(--bg-color);
+  filter: drop-shadow(0 0 10px #b74b4b);
+}
+
+.content button,
+section .button button {
+  width: 50%;
+  height: 6vh;
+  margin: 30px 0;
+  background-color: #b74b4b;
+  color: var(--text-color);
+  font-size: 120%;
+  font-weight: 700;
+  border-radius: 5px;
+  transition: 0.2s linear;
+  border: none;
+  outline: none;
+}
+
+.content button:hover,
+section .button button:hover {
+  scale: 1.1;
+  color: #b74b4b;
+  background-color: transparent;
+  border: 2px solid #b74b4b;
+  box-shadow: 0 0 40px #b74b4b;
+}
+
+/* About Section Styling */
+section .content {
+  width: 80%;
+  margin: 0px auto;
+  font-family: 'Poppins', sans-serif;
+}
+
+.about .about-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+section .title {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+section .title span {
+  font-size: 30px;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 8px;
+}
+
+section .title span::before,
+section .title span::after {
+  content: '';
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: #b74b4b;
+  left: 0;
+  bottom: 0;
+}
+
+section .title span::after {
+  bottom: -7px;
+  width: 70%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.about .about-details .left {
+  width: 45%;
+}
+
+.about .left img {
+  height: 400px;
+  width: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.about-details .right {
+  width: 55%;
+}
+
+section .topic {
+  font-size: 25px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.about-details .right p {
+  text-align: justify;
+}
+
+section .button {
+  margin: 16px 0;
+}
+
+/* Skills Section */
+.skills {
+  background: var(--bg-color);
+}
+
+.skills .content {
+  padding: 40px 0;
+}
+
+.skills .skills-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skills-details .text {
+  width: 50%;
+}
+
+.skills-details p {
+  text-align: justify;
+}
+
+.skills .skills-details .experience {
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+}
+
+.skills-details .experience .num {
+  font-size: 80px;
+}
+
+.skills-details .experience .exp {
+  margin-left: 20px;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 6px;
+}
+
+.skills-details .boxes {
+  width: 45%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.skills-details .box {
+  width: calc(100% / 2 - 20px);
+  margin: 20px 0;
+}
+
+.skills-details .boxes .topic {
+  font-size: 20px;
+  color: #b74b4b;
+}
+
+.skills-details .boxes .per {
+  font-size: 60px;
+  color: #b74b4b;
+}
+
+/* Services Section */
+.services .boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.services .boxes .box {
+  margin: 20px 0;
+  width: calc(100% / 3 - 20px);
+  text-align: center;
+  border-radius: 12px;
+  padding: 30px 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
+  cursor: default;
+  transition: all 0.4s ease;
+}
+
+.services .boxes .box:hover {
+  background: #b74b4b;
+  color: #fff;
+}
+
+.services .boxes .box .icon {
+  height: 50px;
+  width: 50px;
+  background: #b74b4b;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 50px;
+  font-size: 18px;
+  color: #fff;
+  margin: 0 auto 10px auto;
+  transition: all 0.4s ease;
+}
+
+.boxes .box:hover .icon {
+  background-color: #fff;
+  color: #b74b4b;
+}
+
+.services .boxes .box:hover .topic,
+.services .boxes .box:hover p {
+  color: #fff;
+  transition: all 0.4s ease;
+}
+
+/* Contact Section */
+.contact {
+  background: var(--bg-color);
+}
+
+.contact .content {
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+.contact .text {
+  width: 80%;
+  text-align: center;
+  margin: auto;
+}
+
+/* Footer */
+footer {
+  background: #b74b4b;
+  padding: 15px 0;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+footer .text span {
+  font-size: 17px;
+  font-weight: 400;
+}
+
+footer .text span a {
+  font-weight: 500;
+  color: #FFF;
+}
+
+footer .text span a:hover {
+  text-decoration: underline;
+}
+
+.scroll-button a {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: #fff;
+  background: #b74b4b;
+  padding: 7px 12px;
+  font-size: 18px;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.15);
+  display: none;
+}
+
+.email-btn {
+  display: inline-block;
+  width: 50%;
+  height: 6vh;
+  margin: 30px 0;
+  background-color: #b74b4b;
+  color: var(--text-color);
+  font-size: 120%;
+  font-weight: 700;
+  border-radius: 5px;
+  transition: 0.2s linear;
+  text-align: center;
+  line-height: 6vh;
+  text-decoration: none;
+}
+
+.email-btn:hover {
+  scale: 1.1;
+  color: #b74b4b;
+  background-color: transparent;
+  border: 2px solid #b74b4b;
+  box-shadow: 0 0 40px #b74b4b;
+}
